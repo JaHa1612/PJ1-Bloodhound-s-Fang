@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
         dashTime -= Time.deltaTime;
         dashCoolDownTimer -= Time.deltaTime;
 
+
+
         CheckInput();
         FlipController();
 
