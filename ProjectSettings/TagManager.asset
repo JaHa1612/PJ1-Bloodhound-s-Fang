@@ -5,10 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - takePower
-  - checkpoint
-  - "M\u1EB7t \u0111\u1EA5t"
-  - check
-  - "h\u1EC7 th\u1ED1ng"
   layers:
   - Default
   - TransparentFX
@@ -16,11 +12,7 @@ TagManager:
   - Ground
   - Water
   - UI
-<<<<<<< HEAD
-  - Player
-=======
   - Platform
->>>>>>> 30c72644e2012c0d0baca22a6a59daf008f220bf
   - 
   - 
   - 
@@ -49,16 +41,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: back
-    uniqueID: 3080083645
-    locked: 0
-  - name: player
-    uniqueID: 3733872735
-    locked: 0
-  - name: backround
-    uniqueID: 4113517503
-    locked: 0
-  - name: loading
-    uniqueID: 3626160483
     locked: 0
