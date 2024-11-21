@@ -16,7 +16,11 @@ TagManager:
   - Ground
   - Water
   - UI
+<<<<<<< HEAD
   - Player
+=======
+  - Platform
+>>>>>>> 30c72644e2012c0d0baca22a6a59daf008f220bf
   - 
   - 
   - 
