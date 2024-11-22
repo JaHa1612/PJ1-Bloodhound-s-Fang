@@ -16,6 +16,15 @@ public class Player : MonoBehaviour
      private float dashCoolDownTimer;
     [SerializeField] private float dashtime;
 
+
+    [Header("attack info")]
+    [SerializeField] private float comboTime=.3f;
+    private float comboTimeWindow;
+    private bool isAttacking;
+    private int comboCounter;
+
+
+
     private float xInput;
     private bool isMoving;
 
@@ -46,11 +55,21 @@ public class Player : MonoBehaviour
 
         dashTime -= Time.deltaTime;
         dashCoolDownTimer -= Time.deltaTime;
-
+        comboTimeWindow -= Time.deltaTime;
 
 
         CheckInput();
         FlipController();
+
+    }
+
+    public void AttackOver()
+    {
+        isAttacking = false;
+        comboCounter++;
+        if (comboCounter > 2)
+            comboCounter = 0;
+
 
     }
 
@@ -63,6 +82,11 @@ public class Player : MonoBehaviour
     {
         xInput = UnityEngine.Input.GetAxisRaw("Horizontal");
 
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            startAttackEvent();
+        }
+
         if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
@@ -74,9 +98,22 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void startAttackEvent()
+    {
+        if (!isGrounded)
+            return;
+
+        if (comboTimeWindow < 0)
+            comboCounter = 0;
+
+
+        isAttacking = true;
+        comboTimeWindow = comboTime;
+    }
+
     private void DashAbility()
     {
-        if (dashCoolDownTimer < 0)
+        if (dashCoolDownTimer < 0 && !isAttacking)
         {
             dashCoolDownTimer = dashCoolDown;
             dashTime = dashDuration;
@@ -85,9 +122,14 @@ public class Player : MonoBehaviour
 
     private void Movement()
     {
+        if (isAttacking)
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
+
         if (dashTime > 0)
         {
-            rb.velocity = new Vector2(xInput * dashSpeed, 0);
+            rb.velocity = new Vector2(facingDir * dashSpeed, 0);
 
         }
         else
@@ -111,6 +153,8 @@ public class Player : MonoBehaviour
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isMoving", isMoving);
         anim.SetBool("isDashing", dashTime > 0);
+        anim.SetBool("isAttack", isAttacking);
+        anim.SetInteger("comboCounter", comboCounter);
     }
     private void Flip()
     {
