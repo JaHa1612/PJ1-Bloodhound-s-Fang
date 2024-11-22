@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Scenes01.unity.meta
 guid: 0b422e0b4294330499c97bc78a1a0f05
+========
+guid: 22ac1e9fe391e3e4099e0907d685653d
+>>>>>>>> parent of b45b6f9 (map 1 da xong):Assets/Scenes/manh/New Scene 1.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
