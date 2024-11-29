@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
+  m_Name: DecoBui
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: 21300000, guid: 4733ba03d134f2142bcd5e8b840c45e9, type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 1
+  m_TilingRules:
+  - m_Id: 0
+    m_Sprites:
+    - {fileID: 21300000, guid: 4733ba03d134f2142bcd5e8b840c45e9, type: 3}
+    - {fileID: 21300000, guid: 76ffa1fbd24638d45b2d8a2f26f9ed62, type: 3}
+    - {fileID: 21300000, guid: 432721cdfb8614e4aa6cc799d99dbb21, type: 3}
+    - {fileID: 21300000, guid: bc95713d244078b4ba62571dce008ff5, type: 3}
+    - {fileID: 21300000, guid: 23deadd243169cb44a651b2c30e03aa7, type: 3}
+    - {fileID: 21300000, guid: 8346813f817e5e340b63b09f005a70c9, type: 3}
+    - {fileID: 21300000, guid: 73a7dc7c4e8a36b49aadcbf557c32b5d, type: 3}
+    - {fileID: 21300000, guid: 238c0a3e8e3a4ee48a616525a8691663, type: 3}
+    - {fileID: 21300000, guid: 0a259800e24886f4cb0baf0e2e4eaa7f, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_Output: 1
+    m_ColliderType: 1
+    m_RandomTransform: 0
+    m_Neighbors: 
+    m_NeighborPositions:
+    - {x: -1, y: 1, z: 0}
+    - {x: 0, y: 1, z: 0}
+    - {x: 1, y: 1, z: 0}
+    - {x: -1, y: 0, z: 0}
+    - {x: 1, y: 0, z: 0}
+    - {x: -1, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 1, y: -1, z: 0}
+    m_RuleTransform: 0
