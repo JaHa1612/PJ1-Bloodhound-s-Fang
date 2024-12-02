@@ -8,6 +8,7 @@ public class Thanhdoc5 : MonoBehaviour
     [SerializeField] public int tocdobay = 3;
     public bool cham = false;
     [SerializeField] public float diemdung;
+    public bool diemcham = false;
 
 
 

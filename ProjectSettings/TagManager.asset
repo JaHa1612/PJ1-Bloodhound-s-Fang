@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - check
+  - takePower
+  - 'C '
+  - Coins
+  - tiemap
   layers:
   - Default
   - TransparentFX
@@ -40,4 +45,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Backround
+    uniqueID: 1942128991
+    locked: 0
+  - name: Tie map
+    uniqueID: 2975582293
+    locked: 0
+  - name: Player
+    uniqueID: 1639660271
     locked: 0
