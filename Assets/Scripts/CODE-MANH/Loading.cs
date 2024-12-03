@@ -8,9 +8,7 @@ using UnityEngine.UI;
 public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField] private GameObject canvaload;
-    [SerializeField] private Slider sliderload;
-    [SerializeField] private TextMeshProUGUI textload;
-
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -24,14 +22,20 @@ public class NewBehaviourScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             
-            canvaload.SetActive(true);
-            StartCoroutine(Loading());
-
+            //canvaload.SetActive(true);
+            //StartCoroutine(Loading());
+            var currentIdex = SceneManager.GetActiveScene().buildIndex;
+            var nextlever = currentIdex + 1;
+            if (nextlever == SceneManager.sceneCountInBuildSettings)
+            {
+                nextlever = 0;
+            }
+            SceneManager.LoadScene(nextlever);
 
 
         }
     }
-    IEnumerator Loading()
+    /*IEnumerator Loading()
     {
         var value = 0;
         sliderload.value = value;
@@ -54,7 +58,6 @@ public class NewBehaviourScript : MonoBehaviour
         {
             nextlever = 0;
         }
-        SceneManager.LoadScene(nextlever);
+        SceneManager.LoadScene(nextlever);*/
 
     }
-}

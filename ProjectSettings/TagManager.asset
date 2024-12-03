@@ -4,17 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Coins
   - check
+  - tiemap
+  - Die
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - BackGround
+  - 
   - Water
   - UI
-  - ground
-  - Player
-  - Enemy
+  - 
+  - 
+  - 
   - 
   - 
   - 
