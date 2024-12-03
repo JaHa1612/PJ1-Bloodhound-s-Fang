@@ -175,9 +175,12 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 0
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   moveSpeed: 2
   idleTime: 0.5
   attackDistance: 1.5
