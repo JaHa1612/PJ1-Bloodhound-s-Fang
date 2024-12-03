@@ -26,14 +26,6 @@ public class Player_new : Entity
 
 
 
-
-
-
-
-
-
-
-
     #region State
     public PlayerStateMachine stateMachine { get; private set; }
     public PlayerIdleState idleState { get; private set; }
