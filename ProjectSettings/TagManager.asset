@@ -9,6 +9,7 @@ TagManager:
   - 'C '
   - Coins
   - tiemap
+  - Die
   layers:
   - Default
   - TransparentFX
