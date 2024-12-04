@@ -5,13 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/manh/1.unity
     guid: fda9342815a28384f8fcd534cc195771
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/manh/2.unity
     guid: 61b55b601eb65ef4cac6b037aae495c9
   - enabled: 1
+    path: Assets/Scenes/manh/manh/Scenes/2.unity
+    guid: f39431072e1dee44aa1d0ff36c6d9af0
+  - enabled: 1
     path: Assets/Scenes/manh/manh/Scenes/3.unity
     guid: 520242b1a2d1e7540b71a4bad306a7d6
+  - enabled: 1
+    path: Assets/Scenes/CCMM/Sence/CCMM2.unity
+    guid: f215758c3a3880b4bbca88a80c47ffa3
   m_configObjects: {}
