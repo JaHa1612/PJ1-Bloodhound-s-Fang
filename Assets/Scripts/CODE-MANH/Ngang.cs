@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class thanhbay : MonoBehaviour
+public class thanhbayy : MonoBehaviour
 {
     public bool traiphai = true;
     public float trai;

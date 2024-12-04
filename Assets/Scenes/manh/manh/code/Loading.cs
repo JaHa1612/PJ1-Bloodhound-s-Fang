@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Loading : MonoBehaviour
 {
     [SerializeField] private GameObject canvaload;
    

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class côngtắc : MonoBehaviour
+public class Congtac : MonoBehaviour
 {
     public bool traiphai = false ;
     public int speedthanh = 3;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Thanhdoc5 : MonoBehaviour
+public class Thanhdoc: MonoBehaviour
 {
     [SerializeField] public int tocdobay = 3;
     public bool cham = false;
