@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5575540512805025140}
   - component: {fileID: 5155186897076325799}
   - component: {fileID: 2968076434592422093}
+  - component: {fileID: 7455858038938393570}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -35,6 +36,7 @@ Transform:
   - {fileID: 2939692700867467147}
   - {fileID: 2851940609633802465}
   - {fileID: 3612531294980665447}
+  - {fileID: 2749192231774436905}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5575540512805025140
@@ -49,8 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5acfe308e7d674883123034ef4cb8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockBackDirection: {x: 0, y: 0}
+  knockBackDurations: 0
+  attackCheck: {fileID: 2749192231774436905}
+  attackCheckRadius: 0.8
   groundCheck: {fileID: 2851940609633802465}
-  groundCheckDistance: 0.26
+  groundCheckDistance: 0.75
   wallCheck: {fileID: 3612531294980665447}
   wallCheckDistance: 0.2
   whatIsGround:
@@ -63,6 +69,7 @@ MonoBehaviour:
   - {x: 3, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 5}
+  counterAttackDuration: 0.2
   moveSpeed: 12
   jumpForce: 17
   dashCooldown: 0
@@ -100,8 +107,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.41697407, y: -0.27303338}
-  m_Size: {x: 0.86385345, y: 2.1739106}
+  m_Offset: {x: -0.41697407, y: -0.2546264}
+  m_Size: {x: 0.86385345, y: 2.1370966}
   m_Direction: 0
 --- !u!50 &2968076434592422093
 Rigidbody2D:
@@ -130,6 +137,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &7455858038938393570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060489247614033793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1269554c8c73c429a3ac2fc952ebca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMat: {fileID: 2100000, guid: 76bfa96917eafc246ad218d4623f6919, type: 2}
+--- !u!1 &2477641222253433753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2749192231774436905}
+  m_Layer: 8
+  m_Name: attackCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2749192231774436905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477641222253433753}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.73, y: -0.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6604959593980648159}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4333648639927125651
 GameObject:
   m_ObjectHideFlags: 0
