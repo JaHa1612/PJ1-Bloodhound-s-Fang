@@ -81509,10 +81509,6 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -1474677773
       objectReference: {fileID: 0}
-    - target: {fileID: 5575540512805025140, guid: acb5b6c75cfc2ce4bad5e4763deb6e22, type: 3}
-      propertyPath: groundCheckDistance
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 6604959593980648159, guid: acb5b6c75cfc2ce4bad5e4763deb6e22, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.7200093
