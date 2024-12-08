@@ -9,11 +9,22 @@ public class Entity : MonoBehaviour
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
 
+    public EntityFx fx { get; private set; }
+
 
     #endregion
 
 
+
+    [Header("Knockback info")]
+    [SerializeField] protected Vector2 knockBackDirection;
+    [SerializeField] protected float knockBackDurations;
+    protected bool isKnocked;
+
+
     [Header("collision info")]
+    public Transform attackCheck;
+    public float attackCheckRadius;
     [SerializeField] protected Transform groundCheck;
     [SerializeField] protected float groundCheckDistance;
     [SerializeField] protected Transform wallCheck;
@@ -36,6 +47,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void Start()
     {
+        fx = GetComponent<EntityFx>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -43,6 +55,21 @@ public class Entity : MonoBehaviour
     protected virtual void Update()
     {
 
+    }
+
+
+    public virtual void Damage()
+    {
+        fx.StartCoroutine("FlashFX");
+        StartCoroutine("HitKnockBack");
+        Debug.Log(gameObject.name + "was damage!!");
+    }
+    protected virtual IEnumerator HitKnockBack()
+    {
+        isKnocked = true;
+        rb.velocity = new Vector2(knockBackDirection.x * -facingDir, knockBackDirection.y);
+        yield return new WaitForSeconds(knockBackDurations);
+        isKnocked = false;
     }
 
 
@@ -55,10 +82,9 @@ public class Entity : MonoBehaviour
     {
         Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance * facingDir, wallCheck.position.y));
+        Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
     }
     #endregion
-
-
 
 
 
@@ -81,14 +107,23 @@ public class Entity : MonoBehaviour
 
 
 
-
-
     #region velocity
 
-    public virtual void SetZeroVelocity() => rb.velocity = new Vector2(0, 0);
+    public  void SetZeroVelocity()    
+    {
+        if (isKnocked)
+            return;
 
-    public virtual void SetVelocity(float _xVelocity, float _yVelocity)
-    {// Kiểm tra tường trước khi đặt vận tốc ngang
+        rb.velocity = new Vector2(0, 0);
+    }
+
+    public  void SetVelocity(float _xVelocity, float _yVelocity)
+    {
+        if (isKnocked)
+            return;
+
+
+        // Kiểm tra tường trước khi đặt vận tốc ngang
         if (IsWallDetected() && Mathf.Sign(_xVelocity) == facingDir)
         {
             _xVelocity = 0; // Dừng di chuyển theo hướng có tường
