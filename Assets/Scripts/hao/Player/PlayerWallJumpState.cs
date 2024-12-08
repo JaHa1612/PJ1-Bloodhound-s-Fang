@@ -12,7 +12,7 @@ public class PlayerWallJumpState : PlayerState
     {
         base.Enter();
         stateTimer = .4f;
-        player.SetVelocity(5 * -player.facingDir, player.jumpForce);
+        player.SetVelocity( 3 * -player.facingDir, player.jumpForce);
     }
 
     public override void Exit()
@@ -26,7 +26,9 @@ public class PlayerWallJumpState : PlayerState
         if (stateTimer < 0)
             stateMachine.ChangeState(player.airState);
 
-        /*if (player.IsGroundDetected())                //co the bi o collisionCheck
+     
+
+       /* if (player.IsGroundDetected())                //co the bi o collisionCheck
             stateMachine.ChangeState(player.idleState);*/
 
     }

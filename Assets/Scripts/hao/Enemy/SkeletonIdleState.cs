@@ -17,7 +17,7 @@ public class SkeletonIdleState : SkeletonGroundedState
     public override void Exit()
     {
         base.Exit();
-    }
+    }   
 
     public override void Update()
     {

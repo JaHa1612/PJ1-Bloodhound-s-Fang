@@ -1,10 +1,16 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
 
+    #region Components
+    public Animator anim { get; private set; }
+    public Rigidbody2D rb { get; private set; }
+
+
+    #endregion
 
 
     [Header("collision info")]
@@ -21,22 +27,19 @@ public class Entity : MonoBehaviour
     protected bool facingRight = true;
 
 
-    #region Components
-    public Animator anim { get; private set; }
-    public Rigidbody2D rb { get; private set; }
 
-
-    #endregion
 
     protected virtual void Awake()
     {
 
     }
+
     protected virtual void Start()
     {
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
+
     protected virtual void Update()
     {
 
@@ -55,6 +58,10 @@ public class Entity : MonoBehaviour
     }
     #endregion
 
+
+
+
+
     #region Flip
     public virtual void Flip()
     {
@@ -72,12 +79,21 @@ public class Entity : MonoBehaviour
     }
     #endregion
 
+
+
+
+
     #region velocity
 
-    public void SetZeroVelocity() => rb.velocity = new Vector2(0, 0);
+    public virtual void SetZeroVelocity() => rb.velocity = new Vector2(0, 0);
 
-    public void SetVelocity(float _xVelocity, float _yVelocity)
-    {
+    public virtual void SetVelocity(float _xVelocity, float _yVelocity)
+    {// Kiểm tra tường trước khi đặt vận tốc ngang
+        if (IsWallDetected() && Mathf.Sign(_xVelocity) == facingDir)
+        {
+            _xVelocity = 0; // Dừng di chuyển theo hướng có tường
+        }
+
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
         FlipController(_xVelocity);
     }

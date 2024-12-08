@@ -5,12 +5,16 @@ using UnityEngine;
 public class Enemy : Entity
 {
     [SerializeField] protected LayerMask whatIsPlayer;
+
     [Header("move info")]
     public float moveSpeed;
     public float idleTime;
+    public float battleTime;
 
     [Header("attack info")]
     public float attackDistance;
+    public float attackCooldown;
+    [HideInInspector] public float lastTimeAttacked;
 
 
 
