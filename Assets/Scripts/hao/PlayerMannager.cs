@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerManganer : MonoBehaviour
 {
     public static PlayerManganer instance;
+    public Player_new player;
 
     private void Awake()
     {

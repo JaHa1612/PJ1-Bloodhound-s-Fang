@@ -14,6 +14,7 @@ public class EntityFx : MonoBehaviour
         sr = GetComponentInChildren<SpriteRenderer>();
         originalMat = sr.material;
 
+
     }
 
     private IEnumerator FlashFX()
