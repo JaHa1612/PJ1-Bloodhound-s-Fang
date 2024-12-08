@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5575540512805025140}
   - component: {fileID: 5155186897076325799}
   - component: {fileID: 2968076434592422093}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2060489247614033793}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.13, y: 1.72, z: 0}
+  m_LocalPosition: {x: -3.7200093, y: -0.59502155, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50,15 +50,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundCheck: {fileID: 2851940609633802465}
-  groundCheckDistance: 0.18
+  groundCheckDistance: 0.26
   wallCheck: {fileID: 3612531294980665447}
-  wallCheckDistance: 0.23
+  wallCheckDistance: 0.2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
   whatIsWall:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   attackMovement:
   - {x: 3, y: 0}
   - {x: 2, y: 0}
@@ -100,8 +100,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.47025776, y: -0.2730334}
-  m_Size: {x: 0.6557932, y: 2.0780458}
+  m_Offset: {x: -0.41697407, y: -0.27303338}
+  m_Size: {x: 0.86385345, y: 2.1739106}
   m_Direction: 0
 --- !u!50 &2968076434592422093
 Rigidbody2D:
@@ -139,7 +139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3612531294980665447}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: wallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 4333648639927125651}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.109, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 2353870817090210766}
   - component: {fileID: 2087771100756452122}
   - component: {fileID: 4989265903805436405}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ Transform:
   m_GameObject: {fileID: 4482701877797578063}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.24, y: 0, z: 0}
+  m_LocalPosition: {x: 0.07, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -236,7 +236,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1874652839, guid: 01816cad77f4db749aa11e8554beaa7d, type: 3}
+  m_Sprite: {fileID: -7105675749794256429, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -289,7 +289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2851940609633802465}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

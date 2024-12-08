@@ -43,8 +43,9 @@ public class Player_new : Entity
 
     protected override void Awake()
     {
-        stateMachine = new PlayerStateMachine();
+        base.Awake();
 
+        stateMachine = new PlayerStateMachine();
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
         moveState = new PlayerMoveState(this, stateMachine, "Move");
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
@@ -57,7 +58,6 @@ public class Player_new : Entity
 
     protected override void Start()
     {
-
         base.Start();
 
         stateMachine.Initialize(idleState);
@@ -66,8 +66,8 @@ public class Player_new : Entity
 
     protected override void Update()
     {
-
         base.Update();
+
         stateMachine.currentState.Update();
 
         CheckForDashInput();
@@ -105,8 +105,6 @@ public class Player_new : Entity
 
         }
     }
-   
-
 
 
 
