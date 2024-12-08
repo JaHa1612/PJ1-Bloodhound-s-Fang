@@ -22,6 +22,9 @@ public class PlayerGroundedState : PlayerState
     {
         base.Update();
 
+        if (Input.GetKey(KeyCode.J))
+            stateMachine.ChangeState(player.couterAttack);
+
         if (Input.GetKeyDown(KeyCode.K))
             stateMachine.ChangeState(player.primaryAttack);
 
