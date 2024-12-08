@@ -24,7 +24,7 @@ public class Player_new : Entity
     public float dashDuration;
     public float dashDir { get; private set; }
 
-
+    public SkillManager skill {  get; private set; }
 
 
 
@@ -65,6 +65,8 @@ public class Player_new : Entity
     {
         base.Start();
 
+        skill = SkillManager.instance;
+
         stateMachine.Initialize(idleState);
 
     }
@@ -96,12 +98,11 @@ public class Player_new : Entity
 
 
 
-        dashUsageTimer -= Time.deltaTime;
 
 
-        if (Input.GetKeyDown(KeyCode.L) && dashUsageTimer<0)
+        if (Input.GetKeyDown(KeyCode.L) && SkillManager.instance.dash.CanUseSkill())
         {
-            dashUsageTimer = dashCooldown;
+ 
             dashDir = Input.GetAxisRaw("Horizontal");
 
             if (dashDir == 0)
